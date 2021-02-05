@@ -7,7 +7,6 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/aws"
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/stretchr/testify/assert"
 )
 
 // An example of how to test the Terraform module in examples/terraform-aws-s3-example using Terratest.
@@ -20,7 +19,7 @@ func TestTerraformAwsS3Example(t *testing.T) {
 	// terraform testing.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../flugel_test/",
+		TerraformDir: "../terraform_code/",
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
